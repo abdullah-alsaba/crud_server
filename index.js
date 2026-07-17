@@ -64,6 +64,14 @@ app.get("/users/:id", async (req, res) => {
 });
 
 
+app.post('/users', async (req, res)=>{
+  const newUser = req.body
+  const result = await userCollection.insertOne(newUser)
+  res.send(result)
+  console.log(newUser)
+
+  console.log(newUser)
+})
 
 
 app.delete('/users/:id',async (req, res) => {
